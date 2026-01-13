@@ -16,8 +16,8 @@ struct ErrorResponse {
 #[tokio::main]
 async fn main() {
     let api_key = env::var("SUMUP_API_KEY").expect("Missing SUMUP_API_KEY env var.");
-    let merchant_code = env::var("SUMUP_MERCHANT_CODE")
-        .expect("Missing SUMUP_MERCHANT_CODE env var.");
+    let merchant_code =
+        env::var("SUMUP_MERCHANT_CODE").expect("Missing SUMUP_MERCHANT_CODE env var.");
 
     let client = Client::new().with_authorization(&api_key);
 

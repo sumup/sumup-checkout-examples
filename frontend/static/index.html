@@ -1,11 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SumUp Checkout (Static)</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="https://static.sumup.com/favicons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="https://static.sumup.com/favicons/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://static.sumup.com/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://static.sumup.com/favicons/favicon-16x16.png"
+    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -14,7 +24,10 @@
         <header class="header">
           <p class="eyebrow">SumUp Card Widget</p>
           <h1>Checkout Starter</h1>
-          <p class="subtitle">Create a checkout on any backend example and complete the payment here.</p>
+          <p class="subtitle">
+            Create a checkout on any backend example and complete the payment
+            here.
+          </p>
         </header>
 
         <div class="panel" id="form-panel">
@@ -31,14 +44,20 @@
 
           <label class="field">
             <span>Amount (EUR)</span>
-            <input id="amount" type="number" min="0.01" step="0.01" value="10.00" />
+            <input
+              id="amount"
+              type="number"
+              min="0.01"
+              step="0.01"
+              value="10.00"
+            />
           </label>
 
           <button id="pay-button" type="button">Create checkout</button>
           <p class="hint">Defaults to http://localhost:8080.</p>
         </div>
 
-        <div class="panel" id="widget-panel" style="display: none;">
+        <div class="panel" id="widget-panel" style="display: none">
           <div id="sumup-card" class="widget"></div>
           <button id="start-over" type="button">Start over</button>
         </div>
