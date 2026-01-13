@@ -3,10 +3,10 @@ name: Python CI
 on:
   push:
     branches: [main]
-    paths: [backend/python/**]
+    paths: [backend/python/**, .github/workflows/python.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/python/**]
+    paths: [backend/python/**, .github/workflows/python.yaml]
 
 jobs:
   backend-python:

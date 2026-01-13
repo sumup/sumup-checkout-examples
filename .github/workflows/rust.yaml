@@ -3,10 +3,10 @@ name: Rust CI
 on:
   push:
     branches: [main]
-    paths: [backend/rust/**]
+    paths: [backend/rust/**, .github/workflows/rust.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/rust/**]
+    paths: [backend/rust/**, .github/workflows/rust.yaml]
 
 jobs:
   backend-rust:

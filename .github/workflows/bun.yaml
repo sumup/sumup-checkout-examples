@@ -3,10 +3,10 @@ name: Bun CI
 on:
   push:
     branches: [main]
-    paths: [backend/bun/**]
+    paths: [backend/bun/**, .github/workflows/bun.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/bun/**]
+    paths: [backend/bun/**, .github/workflows/bun.yaml]
 
 jobs:
   backend-bun:

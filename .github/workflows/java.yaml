@@ -3,10 +3,10 @@ name: Java CI
 on:
   push:
     branches: [main]
-    paths: [backend/java/**]
+    paths: [backend/java/**, .github/workflows/java.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/java/**]
+    paths: [backend/java/**, .github/workflows/java.yaml]
 
 jobs:
   backend-java:

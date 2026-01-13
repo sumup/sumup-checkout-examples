@@ -3,10 +3,10 @@ name: Deno CI
 on:
   push:
     branches: [main]
-    paths: [backend/deno/**]
+    paths: [backend/deno/**, .github/workflows/deno.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/deno/**]
+    paths: [backend/deno/**, .github/workflows/deno.yaml]
 
 jobs:
   backend-deno:

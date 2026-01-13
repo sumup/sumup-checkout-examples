@@ -3,10 +3,10 @@ name: Dotnet CI
 on:
   push:
     branches: [main]
-    paths: [backend/dotnet/**]
+    paths: [backend/dotnet/**, .github/workflows/dotnet.yaml]
   pull_request:
     branches: [main]
-    paths: [backend/dotnet/**]
+    paths: [backend/dotnet/**, .github/workflows/dotnet.yaml]
 
 jobs:
   backend-dotnet:

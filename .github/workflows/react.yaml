@@ -3,10 +3,10 @@ name: React CI
 on:
   push:
     branches: [main]
-    paths: [frontend/react/**]
+    paths: [frontend/react/**, .github/workflows/react.yaml]
   pull_request:
     branches: [main]
-    paths: [frontend/react/**]
+    paths: [frontend/react/**, .github/workflows/react.yaml]
 
 jobs:
   frontend-react:

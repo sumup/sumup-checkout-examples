@@ -3,10 +3,10 @@ name: Static CI
 on:
   push:
     branches: [main]
-    paths: [frontend/static/**]
+    paths: [frontend/static/**, .github/workflows/static.yaml]
   pull_request:
     branches: [main]
-    paths: [frontend/static/**]
+    paths: [frontend/static/**, .github/workflows/static.yaml]
 
 jobs:
   frontend-static:
