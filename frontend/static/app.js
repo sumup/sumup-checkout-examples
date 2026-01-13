@@ -9,7 +9,9 @@ const widgetPanel = document.getElementById("widget-panel");
 const startOverButton = document.getElementById("start-over");
 const DEFAULT_BACKEND_URL = "http://localhost:8080";
 
-const backendFromQuery = new URLSearchParams(window.location.search).get("backend");
+const backendFromQuery = new URLSearchParams(window.location.search).get(
+  "backend",
+);
 if (backendFromQuery) {
   backendInput.value = backendFromQuery;
 } else {
@@ -60,7 +62,10 @@ payButton.addEventListener("click", async () => {
   showWidget();
 
   const backendUrl = backendInput.value.trim();
-  const endpoint = new URL("/checkouts", backendUrl || DEFAULT_BACKEND_URL).toString();
+  const endpoint = new URL(
+    "/checkouts",
+    backendUrl || DEFAULT_BACKEND_URL,
+  ).toString();
 
   try {
     const response = await fetch(endpoint, {
@@ -105,7 +110,10 @@ payButton.addEventListener("click", async () => {
           );
           setLoading(false);
         } else if (type === "error") {
-          showMessage(`Payment failed: ${body.message || "Unknown error"}`, "error");
+          showMessage(
+            `Payment failed: ${body.message || "Unknown error"}`,
+            "error",
+          );
           setLoading(false);
         }
       },
