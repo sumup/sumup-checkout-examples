@@ -103,6 +103,7 @@ payButton.addEventListener("click", async () => {
       id: "sumup-card",
       checkoutId,
       onResponse: (type, body) => {
+        console.info(`${type}: ${JSON.stringify(body)}`);
         if (type === "success") {
           showMessage(
             `Payment successful! Transaction ID: ${body.transaction_id || "N/A"}`,

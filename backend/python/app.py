@@ -3,7 +3,6 @@ import uuid
 
 from flask import Flask, jsonify, request
 from sumup import Sumup
-from sumup.checkouts import CreateCheckoutBody
 
 api_key = os.environ.get("SUMUP_API_KEY")
 merchant_code = os.environ.get("SUMUP_MERCHANT_CODE")
@@ -31,12 +30,10 @@ def create_checkout():
         return jsonify({"error": "amount must be a positive number"}), 400
 
     checkout = client.checkouts.create(
-        body=CreateCheckoutBody(
-            amount=amount,
-            currency="EUR",
-            checkout_reference=f"checkout-{uuid.uuid4()}",
-            merchant_code=merchant_code,
-        )
+        amount=amount,
+        currency="EUR",
+        checkout_reference=f"checkout-{uuid.uuid4()}",
+        merchant_code=merchant_code,
     )
 
     if hasattr(checkout, "model_dump"):

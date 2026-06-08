@@ -8,9 +8,6 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/sumup/sumup-go"
-	sumupclient "github.com/sumup/sumup-go/client"
-	"github.com/sumup/sumup-go/checkouts"
-	"github.com/sumup/sumup-go/shared"
 )
 
 type createCheckoutRequest struct {
@@ -27,7 +24,7 @@ func main() {
 		log.Fatal("Missing SUMUP_MERCHANT_CODE env var.")
 	}
 
-	client := sumup.NewClient(sumupclient.WithAPIKey(apiKey))
+	client := sumup.NewClient()
 
 	http.HandleFunc("/checkouts", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
@@ -46,9 +43,9 @@ func main() {
 			return
 		}
 
-		checkout, err := client.Checkouts.Create(r.Context(), checkouts.Create{
+		checkout, err := client.Checkouts.Create(r.Context(), sumup.CheckoutCreateRequest{
 			Amount:            payload.Amount,
-			Currency:          shared.CurrencyEUR,
+			Currency:          sumup.CurrencyEUR,
 			MerchantCode:      merchantCode,
 			CheckoutReference: "checkout-" + uuid.NewString(),
 		})
