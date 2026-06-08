@@ -1,7 +1,7 @@
 use axum::{routing::post, Json, Router};
 use serde::{Deserialize, Serialize};
 use std::{env, net::SocketAddr};
-use sumup::{checkouts, Client, Currency};
+use sumup::{checkouts, Authorization, Client, Currency};
 
 #[derive(Deserialize)]
 struct CreateCheckoutRequest {
@@ -19,7 +19,7 @@ async fn main() {
     let merchant_code =
         env::var("SUMUP_MERCHANT_CODE").expect("Missing SUMUP_MERCHANT_CODE env var.");
 
-    let client = Client::new().with_authorization(&api_key);
+    let client = Client::new().with_authorization(Authorization::api_key(api_key));
 
     let app = Router::new().route(
         "/checkouts",
@@ -45,12 +45,9 @@ async fn main() {
                     return_url: None,
                     customer_id: None,
                     purpose: None,
-                    id: None,
-                    status: None,
-                    date: None,
                     valid_until: None,
-                    transactions: None,
                     redirect_url: None,
+                    hosted_checkout: None,
                 };
 
                 match client.checkouts().create(request).await {

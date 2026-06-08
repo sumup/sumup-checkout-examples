@@ -3,7 +3,7 @@
   "specifiers": {
     "jsr:@std/assert@1": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.10",
-    "jsr:@sumup/sdk@^0.0.11": "0.0.11",
+    "jsr:@sumup/sdk@~0.1.6": "0.1.6",
     "npm:@sumup/sdk@*": "0.0.11"
   },
   "jsr": {
@@ -16,8 +16,8 @@
     "@std/internal@1.0.10": {
       "integrity": "e3be62ce42cab0e177c27698e5d9800122f67b766a0bea6ca4867886cbde8cf7"
     },
-    "@sumup/sdk@0.0.11": {
-      "integrity": "51b09a9eb9f6ee134a9575720a919bcbad5980ac100ac8c447fb69a726cf72eb"
+    "@sumup/sdk@0.1.6": {
+      "integrity": "3ff650626afa31e3e27a384a575e84a05b14d4466d50f870e8aa94afacdfaf79"
     }
   },
   "npm": {
@@ -28,7 +28,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
-      "jsr:@sumup/sdk@^0.0.11"
+      "jsr:@sumup/sdk@~0.1.6"
     ]
   }
 }

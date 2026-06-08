@@ -1,12 +1,10 @@
 module sumup-examples-go
 
-go 1.23.0
-
-toolchain go1.23.2
+go 1.24.0
 
 require (
 	github.com/google/uuid v1.6.0
-	github.com/sumup/sumup-go v0.13.0
+	github.com/sumup/sumup-go v0.17.0
 )
 
-require golang.org/x/oauth2 v0.27.0 // indirect
+require golang.org/x/oauth2 v0.35.0 // indirect
